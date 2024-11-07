@@ -46,6 +46,7 @@ const Category = () => {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 20,
+            
             }}
           >
             <Image
