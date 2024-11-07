@@ -14,7 +14,7 @@ const Header = () => {
     >
       <Text style={{ fontSize: 35 }}>Menu</Text>
       <Image
-        source={require("../assets/welcom.png")}
+        source={require("../assets/profile.png")}
         style={{ width: 50, height: 50 }}
       />
     </View>

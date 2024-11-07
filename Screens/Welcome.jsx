@@ -24,8 +24,8 @@ const Welcome = () => {
         }}
       >
         <Image
-          style={{ width: 270, height: 270 }}
-          source={require("../assets/welcom.png")}
+          style={{ width: 270, height: 270, borderRadius: 300 }}
+          source={require("../assets/logo_2.png")}
         />
       </View>
 

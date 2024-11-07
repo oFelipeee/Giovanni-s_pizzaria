@@ -135,7 +135,7 @@ const Details = ({ route }) => {
           <View>
             <Image
               style={{ width: 100, height: 100 }}
-              source={require("../assets/welcom.png")}
+              source={require("../assets/coca.png")}
             />
             <AntDesign
               style={{ position: "absolute", bottom: 0, right: 0 }}
@@ -147,7 +147,7 @@ const Details = ({ route }) => {
           <View>
             <Image
               style={{ width: 100, height: 100 }}
-              source={require("../assets/welcom.png")}
+              source={require("../assets/cheddar.png")}
             />
             <AntDesign
               style={{ position: "absolute", bottom: 0, right: 0 }}
@@ -159,7 +159,7 @@ const Details = ({ route }) => {
           <View>
             <Image
               style={{ width: 100, height: 100 }}
-              source={require("../assets/welcom.png")}
+              source={require("../assets/catupiry.png")}
             />
             <AntDesign
               style={{ position: "absolute", bottom: 0, right: 0 }}

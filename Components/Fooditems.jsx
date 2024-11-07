@@ -7,33 +7,40 @@ import { useNavigation } from "@react-navigation/native";
 
 const Fooditems = () => {
   const nav = useNavigation();
-  const food = [
+  const foodPizza = [
     {
       id: 1,
       name: "Pizza",
       price: 250,
       image:
-        "https://www.food2fork.com/wp-content/uploads/2018/05/chicken-1.jpg",
-    },
-    {
-      id: 2,
-      name: "Veg Pizza",
-      price: 120,
-      image: "https://www.food2fork.com/wp-content/uploads/2018/05/beef-1.jpg",
+        "https://www.marcellinaincucina.com/wp-content/uploads/2021/02/Calabrese-pizza-1-6.jpg",
     },
     {
       id: 3,
-      name: "Burger",
-      price: 100,
-      image: "https://www.food2fork.com/wp-content/uploads/2018/05/pork-1.jpg",
-    },
-    {
-      id: 4,
-      name: "Sandwich",
-      price: 100,
-      image: "https://www.food2fork.com/wp-content/uploads/2018/05/beef-1.jpg",
-    },
+      name: "Bebida",
+      price: 30,
+      image: "https://www.designi.com.br/images/preview/10000392.jpg"
+    }
   ];
+
+  const foodPizzaVeg = [
+    {
+        id: 2,
+        name: "Pizza Vegana",
+        price: 120,
+        image: "https://conteudo.imguol.com.br/c/entretenimento/49/2020/07/09/pizza-vegana-sem-gluten-1594310825995_v2_450x450.jpg",
+
+    }
+  ]
+
+  const bebidas = [
+    {
+      id: 3,
+      name: "Bebida",
+      price: 30,
+      image: ""
+    }
+  ]
   return (
     <View style={{ gap: 15 }}>
       <Text style={{ fontSize: 20 }}>Popular</Text>
@@ -41,7 +48,7 @@ const Fooditems = () => {
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={food}
+        data={foodPizza}
         renderItem={({ item, index }) => (
           <TouchableOpacity
             onPress={() => {
@@ -59,10 +66,15 @@ const Fooditems = () => {
               gap: 10,
             }}
           >
+            
+          
             <Image
               style={{ width: 85, height: 85, alignSelf: "center" }}
-              source={require("../assets/welcom.png")}
+              source={require("../assets/pizza_calabresa.png")}
             />
+            
+            
+            
             <Text style={{ fontSize: 20, textAlign: "center" }}>
               {item.name}
             </Text>
@@ -84,12 +96,20 @@ const Fooditems = () => {
                 ${item.price}
               </Text>
               <Ionicons name="ios-add-circle" size={24} color="green" />
+              
             </View>
+            
           </TouchableOpacity>
+          
         )}
+        
       />
+      
     </View>
+
+    
   );
+  
 };
 
 export default Fooditems;

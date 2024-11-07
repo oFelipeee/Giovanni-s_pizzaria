@@ -1,7 +1,7 @@
 export const colorful = {
-  primary: "#482e9e",
+  primary: "#430000",
 
-  secondary: "#755EBB",
+  secondary: "#cf7c0a",
 };
 
 
