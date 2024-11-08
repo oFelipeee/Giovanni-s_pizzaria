@@ -7,40 +7,14 @@ import { useNavigation } from "@react-navigation/native";
 
 const Fooditems = () => {
   const nav = useNavigation();
-  const foodPizza = [
-    {
-      id: 1,
-      name: "Pizza",
-      price: 250,
-      image:
-        "https://www.marcellinaincucina.com/wp-content/uploads/2021/02/Calabrese-pizza-1-6.jpg",
-    },
-    {
-      id: 3,
-      name: "Bebida",
-      price: 30,
-      image: "https://www.designi.com.br/images/preview/10000392.jpg"
-    }
+  const products = [
+    { id: '2', name: 'Pizza Vegana', price: 90, image: 'https://static.vecteezy.com/system/resources/previews/028/882/831/non_2x/pizza-pizza-transparent-pizza-ai-generated-free-png.png' },
+    { id: '3', name: 'Turbo Burguer',  price: 90, image: 'https://png.pngtree.com/png-vector/20240204/ourmid/pngtree-double-cheese-burger-png-image_11541425.png' },
+    { id: '4', name: 'Pizza Doce',  price: 90, image: 'https://www.designi.com.br/images/preview/11315989.jpg' },
+    { id: '4', name: 'Pizza Calabresa',  price: 90, image: 'https://www.designi.com.br/images/preview/11315989.jpg' },
+    { id: '4', name: 'Pizza Marguerita',  price: 90, image: 'https://www.designi.com.br/images/preview/11315989.jpg' },
   ];
-
-  const foodPizzaVeg = [
-    {
-        id: 2,
-        name: "Pizza Vegana",
-        price: 120,
-        image: "https://conteudo.imguol.com.br/c/entretenimento/49/2020/07/09/pizza-vegana-sem-gluten-1594310825995_v2_450x450.jpg",
-
-    }
-  ]
-
-  const bebidas = [
-    {
-      id: 3,
-      name: "Bebida",
-      price: 30,
-      image: ""
-    }
-  ]
+  
   return (
     <View style={{ gap: 15 }}>
       <Text style={{ fontSize: 20 }}>Popular</Text>
@@ -48,14 +22,14 @@ const Fooditems = () => {
       <FlatList
         horizontal
         showsHorizontalScrollIndicator={false}
-        data={foodPizza}
+        data={products}
         renderItem={({ item, index }) => (
           <TouchableOpacity
             onPress={() => {
               nav.navigate("Details", { data: item });
             }}
             style={{
-              backgroundColor: "#E3E3E3",
+              backgroundColor: "#D3D3D3",
               width: 150,
               height: 200,
               marginRight: 20,
@@ -66,13 +40,6 @@ const Fooditems = () => {
               gap: 10,
             }}
           >
-            
-          
-            <Image
-              style={{ width: 85, height: 85, alignSelf: "center" }}
-              source={require("../assets/pizza_calabresa.png")}
-            />
-            
             
             
             <Text style={{ fontSize: 20, textAlign: "center" }}>

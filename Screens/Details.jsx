@@ -24,8 +24,8 @@ const Details = ({ route }) => {
         }}
       >
         <Image
-          style={{ width: 250, height: 250 }}
-          source={require("../assets/welcom.png")}
+          style={{ width: 250, height: 250, borderRadius: 300 }}
+          source={require("../assets/pizza_vegana.png")}
         />
       </View>
 
