@@ -6,6 +6,7 @@ import Category from "../Components/Category";
 import Banner from "../Components/Banner";
 import Fooditems from "../Components/Fooditems";
 
+
 const Home = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{}}>
