@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginHorizontal: 10,
     backgroundColor: '#8B7D6B', // Cor padrão do produto
-    borderRadius: 600,
+    borderRadius: 20,
     alignItems: 'center',
   },
   selectedProduct: {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   productImage: {
     width: 100,
     height: 100,
-    borderRadius: 600,
+    borderRadius: 100,
     marginBottom: 10,
   },
   productText: {

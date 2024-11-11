@@ -1,11 +1,11 @@
 import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { colorful } from "./../Utils/Colors";
+import { colorful } from "../Utils/Colors";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { item } from "./../Components/Context";
+import { item } from "../Components/Context";
 
 const Details = ({ route }) => {
   const { myBag, setmyBag } = React.useContext(item);
