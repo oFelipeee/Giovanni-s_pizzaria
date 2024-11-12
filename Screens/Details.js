@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { colorful } from "../Utils/Colors";
 import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { item } from "../Components/Context";
 
@@ -25,7 +24,7 @@ const Details = ({ route }) => {
       >
         <Image
           style={{ width: 250, height: 250, borderRadius: 300 }}
-          source={require("../assets/pizza_vegana.png")}
+          source={typeof content.image === 'string' ? { uri: content.image } : content.image}
         />
       </View>
 
@@ -43,7 +42,6 @@ const Details = ({ route }) => {
           style={{
             flexDirection: "row",
             justifyContent: "space-between",
-
             alignItems: "center",
           }}
         >
@@ -65,51 +63,26 @@ const Details = ({ route }) => {
             </Text>
           </View>
 
-          <Text
-            style={{
-              color: colorful.primary,
-              fontWeight: "bold",
-              fontSize: 24,
-            }}
-          >
+          <Text style={{ color: colorful.primary, fontWeight: "bold", fontSize: 24 }}>
             {content.price} RS
           </Text>
         </View>
 
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-
-            alignItems: "center",
-          }}
-        >
-          <Text
-            style={{
-              color: "black",
-              fontWeight: "500",
-              fontSize: 22,
-            }}
-          >
+        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
+          <Text style={{ color: "black", fontWeight: "500", fontSize: 22 }}>
             {content.name}
           </Text>
 
           <View style={{ flexDirection: "row", gap: 10, alignItems: "center" }}>
             <AntDesign
-              onPress={() => {
-                num == 4 ? setnum(4) : setnum(num + 1);
-              }}
+              onPress={() => { num == 4 ? setnum(4) : setnum(num + 1); }}
               name="pluscircle"
               size={24}
               color={colorful.primary}
             />
-            <Text style={{ fontWeight: "bold", fontSize: 19, color: "black" }}>
-              {num}
-            </Text>
+            <Text style={{ fontWeight: "bold", fontSize: 19, color: "black" }}>{num}</Text>
             <AntDesign
-              onPress={() => {
-                num == 1 ? setnum(1) : setnum(num - 1);
-              }}
+              onPress={() => { num == 1 ? setnum(1) : setnum(num - 1); }}
               name="minuscircle"
               size={24}
               color={colorful.primary}
@@ -118,56 +91,22 @@ const Details = ({ route }) => {
         </View>
 
         <Text style={{ fontSize: 15, fontWeight: "400" }}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem adipisci
-          mollitia incidunt eos fuga quas!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem adipisci mollitia incidunt eos fuga quas!
         </Text>
 
-        <Text
-          style={{
-            color: "black",
-            fontWeight: "500",
-            fontSize: 20,
-          }}
-        >
-          Add Ons
-        </Text>
+        <Text style={{ color: "black", fontWeight: "500", fontSize: 20 }}>Add Ons</Text>
         <View style={{ flexDirection: "row", gap: 20 }}>
-          <View>
-            <Image
-              style={{ width: 100, height: 100 }}
-              source={require("../assets/coca.png")}
-            />
-            <AntDesign
-              style={{ position: "absolute", bottom: 0, right: 0 }}
-              name="pluscircle"
-              size={24}
-              color="green"
-            />
-          </View>
-          <View>
-            <Image
-              style={{ width: 100, height: 100 }}
-              source={require("../assets/cheddar.png")}
-            />
-            <AntDesign
-              style={{ position: "absolute", bottom: 0, right: 0 }}
-              name="pluscircle"
-              size={24}
-              color="green"
-            />
-          </View>
-          <View>
-            <Image
-              style={{ width: 100, height: 100 }}
-              source={require("../assets/catupiry.png")}
-            />
-            <AntDesign
-              style={{ position: "absolute", bottom: 0, right: 0 }}
-              name="pluscircle"
-              size={24}
-              color="green"
-            />
-          </View>
+          {content.addons && content.addons.map((addon, index) => (
+            <View key={index}>
+              <Image style={{ width: 100, height: 100 }} source={addon} />
+              <AntDesign
+                style={{ position: "absolute", bottom: 0, right: 0 }}
+                name="pluscircle"
+                size={24}
+                color="green"
+              />
+            </View>
+          ))}
         </View>
 
         {myBag.includes(content) ? (
@@ -188,9 +127,7 @@ const Details = ({ route }) => {
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-            onPress={() => {
-              setmyBag([...myBag, content]);
-            }}
+            onPress={() => { setmyBag([...myBag, content]); }}
             style={{
               backgroundColor: colorful.primary,
               height: 55,
