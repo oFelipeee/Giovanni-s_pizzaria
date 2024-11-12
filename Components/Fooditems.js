@@ -48,6 +48,7 @@ const Fooditems = () => {
         require('../assets/catupiry.png'),
       ],
     },
+
   ];
 
   return (
