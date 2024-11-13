@@ -11,4 +11,4 @@ React Native: Desenvolvimento da interface de usuário React Navigation: Navega�
 
 ⚖ Direitos Todos os direitos são reservados ao desenvolvedor do projeto.
 
-Desenvolvido por Igor Thiago Nakajima e Fleipe Paulino dos Santos.
+Desenvolvido por Igor Thiago Nakajima e Felipe Paulino dos Santos.
