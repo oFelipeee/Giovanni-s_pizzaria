@@ -9,21 +9,29 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import { colorful } from "../Utils/Colors";
-import { FontAwesome } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
-import { Item, item } from "../Components/Context";
 import { useNavigation } from "@react-navigation/native";
+import { item } from "../Components/Context";
 
 const Cart = () => {
   const nav = useNavigation();
-  let totalAmount = 0;
   const { myBag, setmyBag } = React.useContext(item);
-  const [num, setnum] = useState(1);
 
-  for (const i of myBag) {
-    totalAmount = totalAmount + i.price;
-  }
+  // Calcula o total de acordo com as quantidades de cada item
+// Calcula o total de acordo com as quantidades e preços de cada item
+const totalAmount = myBag.reduce(
+  (acc, product) => acc + (product.price * (product.quantity || 1)),
+  0
+);
+
+
+  // Atualiza a quantidade de um item no carrinho
+  const updateQuantity = (product, newQuantity) => {
+    const updatedBag = myBag.map((item) => 
+      item.name === product.name ? { ...item, quantity: newQuantity } : item
+    );
+    setmyBag(updatedBag);
+  };
 
   return (
     <SafeAreaView
@@ -36,17 +44,17 @@ const Cart = () => {
       }}
     >
       <Text style={{ fontSize: 22, fontWeight: "500" }}>
-        {myBag.length} items in cart
+        {myBag.length} Itens no carrinho
       </Text>
       <View style={{ height: 300 }}>
         <FlatList
           data={myBag}
-          renderItem={({ item, index }) => {
+          keyExtractor={(item) => item.name}
+          renderItem={({ item }) => {
             return (
               <View
                 style={{
                   height: 130,
-
                   borderRadius: 20,
                   marginBottom: 10,
                   flexDirection: "row",
@@ -65,7 +73,7 @@ const Cart = () => {
                 >
                   <Image
                     style={{ width: 90, height: 90 }}
-                    source={require("../assets/welcom.png")}
+                    source={{ uri: item.image }}
                   />
                 </View>
 
@@ -75,7 +83,6 @@ const Cart = () => {
                     paddingHorizontal: 15,
                     paddingVertical: 15,
                     justifyContent: "space-between",
-
                     borderRadius: 20,
                   }}
                 >
@@ -91,9 +98,7 @@ const Cart = () => {
                       </Text>
                       <AntDesign
                         onPress={() => {
-                          setmyBag(
-                            myBag.filter((val) => val.name != item.name)
-                          );
+                          setmyBag(myBag.filter((val) => val.name !== item.name));
                         }}
                         name="closecircleo"
                         size={24}
@@ -121,7 +126,8 @@ const Cart = () => {
                   >
                     <AntDesign
                       onPress={() => {
-                        num == 4 ? setnum(4) : setnum(num + 1);
+                        const newQuantity = item.quantity + 1;
+                        updateQuantity(item, newQuantity);
                       }}
                       name="pluscircle"
                       size={20}
@@ -134,11 +140,12 @@ const Cart = () => {
                         color: "black",
                       }}
                     >
-                      {num}
+                      {item.quantity}
                     </Text>
                     <AntDesign
                       onPress={() => {
-                        num == 1 ? setnum(1) : setnum(num - 1);
+                        const newQuantity = item.quantity > 1 ? item.quantity - 1 : 1;
+                        updateQuantity(item, newQuantity);
                       }}
                       name="minuscircle"
                       size={20}
@@ -152,9 +159,7 @@ const Cart = () => {
         />
       </View>
 
-      <Text style={{ fontSize: 22, fontWeight: "500" }}>
-        Order Instructions
-      </Text>
+      <Text style={{ fontSize: 22, fontWeight: "500" }}>Ordens</Text>
 
       <View
         style={{
@@ -166,7 +171,7 @@ const Cart = () => {
           paddingVertical: 10,
         }}
       >
-        <TextInput style={{ height: 55, fontSize: 17 }} />
+        <TextInput style={{ height: 55, fontSize: 17 }} placeholder="Observações" />
       </View>
 
       <View
@@ -190,10 +195,14 @@ const Cart = () => {
 
       <TouchableOpacity
         onPress={() => {
-          nav.replace("Order");
+          if (myBag.length > 0) {
+            setmyBag([]); // Limpa o carrinho
+            nav.replace("Order"); // Navega para a tela de pedidos
+          }
         }}
+        disabled={myBag.length === 0}
         style={{
-          backgroundColor: colorful.primary,
+          backgroundColor: myBag.length > 0 ? colorful.primary : "gray",
           height: 60,
           borderRadius: 20,
           justifyContent: "center",
@@ -201,7 +210,7 @@ const Cart = () => {
         }}
       >
         <Text style={{ color: "white", fontSize: 19, fontWeight: "700" }}>
-          Checkout
+          Confirmar
         </Text>
       </TouchableOpacity>
 
@@ -210,15 +219,6 @@ const Cart = () => {
           nav.navigate("Home");
         }}
       >
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: 19,
-            fontWeight: "400",
-          }}
-        >
-          Back to Menu
-        </Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

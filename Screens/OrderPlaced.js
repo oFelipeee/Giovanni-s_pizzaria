@@ -6,11 +6,17 @@ import { useNavigation } from "@react-navigation/native";
 
 const OrderPlaced = () => {
   const nav = useNavigation();
+
   useEffect(() => {
-    setTimeout(() => {
-      nav.navigate("Tabs");
-    }, 4000);
+    // Define o temporizador para 2 segundos (2000 ms)
+    const timer = setTimeout(() => {
+      nav.goBack(); // Alternativamente, use nav.navigate("Tabs") se preferir uma navegação específica
+    }, 2000);
+
+    // Limpa o timer se o componente for desmontado antes dos 2 segundos
+    return () => clearTimeout(timer);
   }, []);
+
   return (
     <View
       style={{
@@ -31,7 +37,7 @@ const OrderPlaced = () => {
           lineHeight: 40,
         }}
       >
-        Hurray! Your Order Placed Succesfully
+        Pedido realizado com sucesso
       </Text>
     </View>
   );
