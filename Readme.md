@@ -1,5 +1,5 @@
 ## 🚀 Giovanni's Pizzaria
-Aplicação de uma Pizzaria.
+Aplicação de um Restaurante.
 
 
 
