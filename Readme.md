@@ -3,7 +3,7 @@
 
 
 
-## ✅ Concluido ✅
+############################################################## ✅ Concluido ✅
 📎 Funcionalidades Cadastro e Login Simulação e confirmação de pedidos Gestão de perfil do usuário Navegação entre telas 💻 Giovanni's Pizzaria é um aplicativo de um restaurante desenvolvido em React Native. Ele permite que os usuários naveguem por produtos, realizem pedidos, e acompanhem o status de seus pedidos de forma prática e interativa.
 ## Esse projeto foi desenvolvido com as seguintes tecnologias:
 
