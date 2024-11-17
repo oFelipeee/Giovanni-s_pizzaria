@@ -1,5 +1,5 @@
 ## 🚀 Giovanni's Pizzaria
-                      Aplicação de um Restaurante.
+                                      Aplicação de um Food App
 
 
 
