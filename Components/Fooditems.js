@@ -66,7 +66,7 @@ const Fooditems = () => {
               nav.navigate("Details", { data: item });
             }}
             style={{
-              backgroundColor: "#D3D3D3",
+              backgroundColor: colorful.itemsFood,
               width: 150,
               height: 220,
               marginRight: 20,
@@ -86,7 +86,7 @@ const Fooditems = () => {
                 marginBottom: 10,
               }}
             />
-            <Text style={{ fontSize: 16, textAlign: "center" }}>{item.name}</Text>
+            <Text style={{color:"white", fontSize: 16, textAlign: "center", fontWeight:"bold" }}>{item.name}</Text>
             <View
               style={{
                 flexDirection: "row",
@@ -97,7 +97,7 @@ const Fooditems = () => {
             >
               <Text
                 style={{
-                  color: colorful.primary,
+                  color: "white",
                   fontWeight: "bold",
                   fontSize: 18,
                 }}

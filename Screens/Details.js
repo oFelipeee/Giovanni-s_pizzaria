@@ -63,7 +63,7 @@ const Details = ({ route }) => {
             </Text>
           </View>
 
-          <Text style={{ color: colorful.primary, fontWeight: "bold", fontSize: 24 }}>
+          <Text style={{ color: "black", fontWeight: "bold", fontSize: 24 }}>
             {content.price} RS
           </Text>
         </View>

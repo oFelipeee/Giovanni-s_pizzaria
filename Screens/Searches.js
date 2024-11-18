@@ -9,6 +9,7 @@ import { View,
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native"; // Importar useNavigation
+import { colorful } from "../Utils/Colors";
 
 const pizzas = [
   { id: '1', name: 'Pizza Margherita', price: 45, image: 'https://www.donguilherme.com.br/assets/userfiles/archives/6405dff0d4d8d.jpg' },
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
   card: {
     width: 170,
     borderRadius: 20,
-    backgroundColor: '#cf7c0a',
+    backgroundColor: colorful.category,
     marginRight: 15,
     padding: 10,
     alignItems: 'center',
@@ -156,6 +157,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   cardText: {
+    color: "white",
     fontSize: 14,
     fontWeight: '500',
     textAlign: 'center',

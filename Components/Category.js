@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
+import { colorful } from '../Utils/Colors';
 
 const ProductFeed = ({ onSelectCategory, selectedCategory }) => {
   const products = [
@@ -101,12 +102,12 @@ const styles = StyleSheet.create({
   productItem: {
     padding: 10,
     marginHorizontal: 10,
-    backgroundColor: '#8B7D6B',
+    backgroundColor: colorful.cardItems,
     borderRadius: 20,
     alignItems: 'center',
   },
   selectedProductItem: {
-    backgroundColor: '#430000', // Cor de destaque quando o item estiver selecionado
+    backgroundColor: colorful.selectedProd, // Cor de destaque quando o item estiver selecionado
   },
   productImage: {
     width: 80,
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   productText: {
+    fontWeight: "bold",
     fontSize: 16,
     color: '#fff',
   },
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 10,
     borderRadius: 20,
-    backgroundColor: '#cf7c0a',
+    backgroundColor: colorful.category,
     padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
@@ -134,6 +136,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   cardText: {
+    color: "white",
     fontSize: 14,
     fontWeight: '500',
     textAlign: 'center',
