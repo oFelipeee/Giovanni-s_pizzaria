@@ -18,5 +18,5 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 ## 📝 Licença
 Este projeto está sob a licença MIT. Sinta-se livre para usá-lo como desejar.
 
-Desenvolvido por Igor Nakajima e Felipe Paulino
+Desenvolvido por ## Igor Nakajima e Felipe Paulino
 
