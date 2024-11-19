@@ -15,6 +15,9 @@ Desenvolvimento da interface de usuário React Navigation: Navegação entre tel
 ## 🤝 Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
 
+## Documentação
+https://www.canva.com/design/DAGWYs_D830/8ApBwEWOBp1nYNewRJYmWg/edit?utm_content=DAGWYs_D830&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 ## 📝 Licença
 Este projeto está sob a licença MIT. Sinta-se livre para usá-lo como desejar.
 
