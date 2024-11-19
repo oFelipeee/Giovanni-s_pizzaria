@@ -1,6 +1,6 @@
 # Giovanni's Pizzaria 🍕
 
-Bem-vindo ao repositório do projeto *Giovanni's Pizzaria*! Este projeto é um sistema para gerenciar os pedidos, cardápio e operações de uma pizzaria. Ele foi desenvolvido para fornecer uma experiência prática tanto para os clientes quanto para a administração da pizzaria.
+Este projeto é um sistema para gerenciar os pedidos, cardápio e operações de uma pizzaria. Ele foi desenvolvido para fornecer uma experiência prática tanto para os clientes quanto para a administração da pizzaria.
 
 ## 📋 Funcionalidades
 
