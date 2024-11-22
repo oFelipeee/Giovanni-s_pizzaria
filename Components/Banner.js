@@ -9,7 +9,7 @@ const Banner = () => {
   const promoData = [
     {
       name: "Batata Lovers",
-      price: 20,
+      price: "20",
       image: require("../assets/batatinha.png"),
       description: "Porção de batatas com 2 molhos",
       addons: [
@@ -19,23 +19,24 @@ const Banner = () => {
     },
     {
       name: "Combo Família:",
-      price: 100,
+      price: "100",
       image: require("../assets/combo2.png"),
       description: "2 pizzas + refrigerante por R$ 100",
       addons: [
         require("../assets/coca.png"),
-        
-      ],    },
+
+      ],
+    },
     {
       name: "Dia do Hambúrguer",
-      price: 15,
+      price: "15",
       image: require("../assets/burguer.png"),
       description: "20% de desconto",
       addons: [
         require("../assets/coca.png"),
-        
+
       ],
-      
+
     },
   ];
 
