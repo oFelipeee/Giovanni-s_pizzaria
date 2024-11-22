@@ -8,22 +8,34 @@ const Banner = () => {
 
   const promoData = [
     {
-      name: "Batata frita grande grátis",
+      name: "Batata Lovers",
+      price: 20,
       image: require("../assets/batatinha.png"),
-      description: "Em compras acima de $50",
+      description: "Porção de batatas com 2 molhos",
       addons: [
-        require("../assets/coca.png"),
+        require("../assets/abrbe.png"),
+        require("../assets/cheddar.png"),
       ],
     },
     {
-      name: "Combo Burguer + Pizza",
-      price: "100",
+      name: "Combo Família:",
+      price: 100,
       image: require("../assets/combo2.png"),
-      description: "Combo burguer + pizza, por $100",
+      description: "2 pizzas + refrigerante por R$ 100",
+      addons: [
+        require("../assets/coca.png"),
+        
+      ],    },
+    {
+      name: "Dia do Hambúrguer",
+      price: 15,
+      image: require("../assets/burguer.png"),
+      description: "20% de desconto",
       addons: [
         require("../assets/coca.png"),
         
       ],
+      
     },
   ];
 
@@ -39,7 +51,7 @@ const Banner = () => {
           <View
             style={{
               backgroundColor: colorful.teste,
-              height: 150,
+              height: 160,
               borderRadius: 10,
               paddingHorizontal: 20,
               flexDirection: "row",

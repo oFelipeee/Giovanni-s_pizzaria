@@ -27,6 +27,8 @@ const Fooditems = () => {
       image: 'https://assets.unileversolutions.com/recipes-v2/106684.jpg',
       addons: [
         require('../assets/coca.png'),
+        require('../assets/batata.png'),
+        require('../assets/cheddarbatata.png'),
       ],
     },
     {
