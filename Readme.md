@@ -22,5 +22,5 @@ https://www.canva.com/design/DAGWYs_D830/8ApBwEWOBp1nYNewRJYmWg/edit?utm_content
 ## 📝 Licença
 Este projeto está sob a licença MIT. Sinta-se livre para usá-lo como desejar.
 
-Desenvolvido por Igor Nakajima e Felipe Paulino
+Desenvolvido por **Igor Nakajima** e **Felipe Paulino**
 
