@@ -1,49 +1,49 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 
-const Profile = ({ navigation }) => {
-  const [name, setName] = useState('');
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleSubmit = async () => {
-    if (!name || !email || !password) {
+  const handleLogin = async () => {
+    if (!email || !password) {
       setError('Por favor, preencha todos os campos!');
       return;
     }
-  
+
     try {
-      const response = await axios.post('http://10.0.2.2:3000/users', {
-        name,
-        email,
-        password,
+      // Faz uma requisição para buscar usuários com o email e senha correspondentes
+      const response = await axios.get('http:10.0.2.2:3000/users',{
+        params: {
+          email,
+          password,
+        },
       });
-  
-      if (response.status === 201) {
-        // Cadastro bem-sucedido
-        navigation.navigate('Login');
+
+      if (response.data.length > 0) {
+        // Usuário encontrado
+        const user = response.data[0]; // Pega o primeiro usuário encontrado
+        Alert.alert('Login realizado com sucesso!');
+        // Passa os dados do usuário para a tela Home
+        navigation.navigate('Home', { user }); // Corrigido para passar o nome da tela 'Home'
+      } else {
+        // Usuário não encontrado
+        setError('Email ou senha inválidos!');
       }
-    } catch (error) {
-      console.error(error); // Log para depuração
-      setError('Erro ao cadastrar. Tente novamente.');
+    } catch (err) {
+      console.error(err);
+      setError('Erro ao verificar as credenciais. Tente novamente.');
     }
   };
-  
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Cadastro</Text>
+      <Text style={styles.title}>Login</Text>
 
       {error ? <Text style={styles.error}>{error}</Text> : null}
 
-      <TextInput
-        style={styles.input}
-        placeholder="Nome"
-        value={name}
-        onChangeText={setName}
-      />
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -59,12 +59,7 @@ const Profile = ({ navigation }) => {
         secureTextEntry
       />
 
-      <Button title="Cadastrar" onPress={handleSubmit} />
-
-      <View style={styles.loginContainer}>
-        <Text>Já tem uma conta?</Text>
-        <Button title="Login" onPress={() => navigation.navigate('Login')} />
-      </View>
+      <Button title="Entrar" onPress={handleLogin} />
     </View>
   );
 };
@@ -93,10 +88,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10,
   },
-  loginContainer: {
-    marginTop: 20,
-    alignItems: 'center',
-  },
 });
 
-export default Profile;
+export default Login;
