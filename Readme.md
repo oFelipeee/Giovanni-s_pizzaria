@@ -8,6 +8,7 @@ Este projeto é um sistema para gerenciar os pedidos, cardápio e operações de
 - **Sistema de Pedidos**: Clientes podem realizar pedidos com base no cardápio.
 - **Administração**: Recursos para gerenciar os pedidos em tempo real.
 - **Interface Amigável**: Foco em acessibilidade e usabilidade.
+- **Autenticação**: Login seguro para usuários e administradores.
 
 ## 🛠️ Tecnologias Utilizadas
 Desenvolvimento da interface de usuário React Navigation: Navegação entre telas Hooks (useState, useEffect): Gerenciamento de estado e ciclo de vida dos componentes AsyncStorage: Armazenamento de dados local no dispositivo Axios: Comunicação com o backend local para operações de CRUD 📕.
