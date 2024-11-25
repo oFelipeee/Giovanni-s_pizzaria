@@ -10,13 +10,13 @@ const Search = () => {
         height: 60,
         borderRadius: 50,
         flexDirection: "row",
-        alignItems:'center',
-        gap:15,
-        paddingHorizontal:15
+        alignItems: 'center',
+        gap: 15,
+        paddingHorizontal: 15
       }}
     >
       <Feather name="search" size={24} color="black" />
-      <TextInput style={{flex:0.9,fontSize:17}} placeholder="Search" />
+      <TextInput style={{ flex: 0.9, fontSize: 17 }} placeholder="Search" />
     </View>
   );
 };

@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
- 
+
 const Header = ({ navigation }) => {
   return (
     <View
@@ -20,5 +20,5 @@ const Header = ({ navigation }) => {
     </View>
   );
 };
- 
+
 export default Header;
