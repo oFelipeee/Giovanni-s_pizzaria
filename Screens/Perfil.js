@@ -9,7 +9,7 @@ const Profile = () => {
  
   useEffect(() => {
     // Substitua pelo ID do usuário logado
-    const userId = "4bdc";
+    const userId = "daa0";
  
     const fetchUser = async () => {
       try {

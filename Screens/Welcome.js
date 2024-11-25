@@ -64,7 +64,7 @@ const Welcome = () => {
             lineHeight: 30,
           }}
         >
-          Get Started
+          Iniciar
         </Text>
       </TouchableOpacity>
     </LinearGradient>
