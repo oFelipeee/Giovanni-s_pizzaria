@@ -5,13 +5,13 @@ import Search from "../Components/Search";
 import Category from "../Components/Category";
 import Banner from "../Components/Banner";
 import Fooditems from "../Components/Fooditems";
-
-
-const Home = () => {
+ 
+const Home = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{}}>
       <SafeAreaView style={{ paddingHorizontal: 25, paddingTop: 60, gap: 20 }}>
-        <Header />
+        {/* Passando navigation como prop */}
+        <Header navigation={navigation} />
         <Search />
         <Category />
         <Banner />
@@ -20,5 +20,5 @@ const Home = () => {
     </ScrollView>
   );
 };
-
+ 
 export default Home;

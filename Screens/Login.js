@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 
 const Login = ({ navigation }) => {
@@ -14,8 +14,7 @@ const Login = ({ navigation }) => {
     }
 
     try {
-      // Faz uma requisição para buscar usuários com o email e senha correspondentes
-      const response = await axios.get('http:10.0.2.2:3000/users',{
+      const response = await axios.get('http://10.0.2.2:3000/users', {
         params: {
           email,
           password,
@@ -23,13 +22,11 @@ const Login = ({ navigation }) => {
       });
 
       if (response.data.length > 0) {
-        // Usuário encontrado
         const user = response.data[0]; // Pega o primeiro usuário encontrado
         Alert.alert('Login realizado com sucesso!');
-        // Passa os dados do usuário para a tela Home
-        navigation.navigate('Home', { user }); // Corrigido para passar o nome da tela 'Home'
+        // Passa os dados do usuário para a tela Profile
+        navigation.navigate('Profile', { user });
       } else {
-        // Usuário não encontrado
         setError('Email ou senha inválidos!');
       }
     } catch (err) {
@@ -59,7 +56,9 @@ const Login = ({ navigation }) => {
         secureTextEntry
       />
 
-      <Button title="Entrar" onPress={handleLogin} />
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -76,17 +75,30 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   input: {
-    height: 40,
+    height: 45,
     borderColor: '#ccc',
     borderWidth: 1,
     marginBottom: 12,
     paddingLeft: 8,
-    borderRadius: 4,
+    borderRadius: 12, // Arredondando mais as bordas
+    fontSize: 16,
   },
   error: {
     color: 'red',
     textAlign: 'center',
     marginBottom: 10,
+  },
+  button: {
+    backgroundColor: 'red', // Cor vermelha para o botão
+    paddingVertical: 12,
+    borderRadius: 12, // Bordas arredondadas no botão
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

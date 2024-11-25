@@ -1,18 +1,15 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./Home";
 import Searches from "./Searches";
 import Cart from "./Cart";
-import Profile from "./Profile";
-import { Entypo } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
+import Profile from "./Perfil";
+import { Entypo, AntDesign, Feather, Ionicons } from "@expo/vector-icons";
 import { colorful } from "../Utils/Colors";
-
+ 
 const Tab = createBottomTabNavigator();
-
+ 
 const Tabs = () => {
   return (
     <Tab.Navigator
@@ -92,7 +89,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={Profile} // Tela de perfil diretamente
         options={{
           tabBarIcon: ({ focused }) =>
             focused ? (
@@ -116,5 +113,5 @@ const Tabs = () => {
     </Tab.Navigator>
   );
 };
-
+ 
 export default Tabs;

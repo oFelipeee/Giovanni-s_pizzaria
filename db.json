@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nome": "João Silva",
+      "email": "joao.silva@example.com",
+      "senha": "senha123"
+    },
+    {
+      "id": "2278",
+      "name": "teste",
+      "email": "teste@gmail.com",
+      "password": "12345465"
+    },
+    {
+      "id": "1e32",
+      "name": "userInfo.name",
+      "email": "oi@gmail.com",
+      "password": "felipe1234"
+    },
+    {
+      "id": "daa0",
+      "name": "teste",
+      "email": "teste2@gmail",
+      "password": "2345"
+    },
+    {
+      "id": "4bdc",
+      "name": "teste",
+      "email": "teste2@gmail",
+      "password": "2345"
+    },
+    {
+      "id": "3273",
+      "name": "teste",
+      "email": "teste2@gmail",
+      "password": "2345"
+    },
+    {
+      "id": "3849",
+      "name": "teste",
+      "email": "teste@oia",
+      "password": "felipe"
+    }
+  ]
+}
