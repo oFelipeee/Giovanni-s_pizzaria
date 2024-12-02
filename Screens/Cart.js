@@ -6,24 +6,24 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
-import React, { useState } from "react";
+import React from "react";
 import { colorful } from "../Utils/Colors";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { item } from "../Components/Context";
+import axios from "axios";
 
 const Cart = () => {
   const nav = useNavigation();
   const { myBag, setmyBag } = React.useContext(item);
 
-  // Calcula o total de acordo com as quantidades de cada item
   // Calcula o total de acordo com as quantidades e preços de cada item
   const totalAmount = myBag.reduce(
-    (acc, product) => acc + (product.price * (product.quantity || 1)),
+    (acc, product) => acc + product.price * (product.quantity || 1),
     0
   );
-
 
   // Atualiza a quantidade de um item no carrinho
   const updateQuantity = (product, newQuantity) => {
@@ -126,7 +126,7 @@ const Cart = () => {
                   >
                     <AntDesign
                       onPress={() => {
-                        const newQuantity = item.quantity + 1;
+                        const newQuantity = (item.quantity || 1) + 1;
                         updateQuantity(item, newQuantity);
                       }}
                       name="pluscircle"
@@ -140,11 +140,12 @@ const Cart = () => {
                         color: "black",
                       }}
                     >
-                      {item.quantity}
+                      {item.quantity || 1}
                     </Text>
                     <AntDesign
                       onPress={() => {
-                        const newQuantity = item.quantity > 1 ? item.quantity - 1 : 1;
+                        const newQuantity =
+                          item.quantity && item.quantity > 1 ? item.quantity - 1 : 1;
                         updateQuantity(item, newQuantity);
                       }}
                       name="minuscircle"
@@ -194,10 +195,28 @@ const Cart = () => {
       </View>
 
       <TouchableOpacity
-        onPress={() => {
+        onPress={async () => {
           if (myBag.length > 0) {
-            setmyBag([]); // Limpa o carrinho
-            nav.replace("Order"); // Navega para a tela de pedidos
+            try {
+              // Enviando os dados do pedido ao servidor
+              const response = await axios.post("http://10.0.2.2:3000/users", {
+                items: myBag,
+                total: totalAmount,
+                date: new Date().toISOString(), // Adiciona uma data de pedido
+              });
+
+              if (response.status === 201) {
+                Alert.alert("Pedido Confirmado", "Seu pedido foi enviado com sucesso!");
+                setmyBag([]); // Limpa o carrinho
+                nav.replace("Order"); // Navega para a tela de pedidos
+              }
+            } catch (error) {
+              console.error("Erro ao enviar o pedido:", error);
+              Alert.alert(
+                "Erro",
+                "Não foi possível enviar seu pedido. Tente novamente."
+              );
+            }
           }
         }}
         disabled={myBag.length === 0}
@@ -212,13 +231,6 @@ const Cart = () => {
         <Text style={{ color: "white", fontSize: 19, fontWeight: "700" }}>
           Confirmar
         </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => {
-          nav.navigate("Home");
-        }}
-      >
       </TouchableOpacity>
     </SafeAreaView>
   );

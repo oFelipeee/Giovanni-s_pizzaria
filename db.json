@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "João Silva",
       "email": "joao.silva@example.com",
       "senha": "senha123"
@@ -29,6 +29,96 @@
       "name": "igor",
       "email": "teste2@gmail.com",
       "password": "1234567"
+    },
+    {
+      "id": "4126",
+      "items": [
+        {
+          "id": "6",
+          "name": "Double Bacon",
+          "price": 43,
+          "image": "https://groundbeefrecipes.com/wp-content/uploads/double-bacon-cheeseburger-recipe-6.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 43,
+      "date": "2024-12-02T17:31:06.244Z"
+    },
+    {
+      "id": "4dd3",
+      "items": [
+        {
+          "id": "1",
+          "name": "Pizza Margherita",
+          "price": 45,
+          "image": "https://www.donguilherme.com.br/assets/userfiles/archives/6405dff0d4d8d.jpg",
+          "quantity": 10
+        }
+      ],
+      "total": 450,
+      "date": "2024-12-02T17:31:51.945Z"
+    },
+    {
+      "id": "3d92",
+      "items": [
+        {
+          "id": "6",
+          "name": "Double Bacon",
+          "price": 43,
+          "image": "https://groundbeefrecipes.com/wp-content/uploads/double-bacon-cheeseburger-recipe-6.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 43,
+      "date": "2024-12-02T17:36:10.078Z"
+    },
+    {
+      "id": "c332",
+      "items": [
+        {
+          "id": "1",
+          "name": "Pizza Margherita",
+          "price": 45,
+          "image": "https://www.donguilherme.com.br/assets/userfiles/archives/6405dff0d4d8d.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 45,
+      "date": "2024-12-02T17:42:42.596Z"
+    },
+    {
+      "id": "4b04",
+      "items": [
+        {
+          "id": "1",
+          "name": "Pizza Margherita",
+          "price": 45,
+          "image": "https://www.donguilherme.com.br/assets/userfiles/archives/6405dff0d4d8d.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 45,
+      "date": "2024-12-02T17:54:52.978Z"
+    },
+    {
+      "id": "cbb8",
+      "name": "igor",
+      "email": "teste4@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "3d9f",
+      "items": [
+        {
+          "id": "1",
+          "name": "Pizza Margherita",
+          "price": 45,
+          "image": "https://www.donguilherme.com.br/assets/userfiles/archives/6405dff0d4d8d.jpg",
+          "quantity": 8
+        }
+      ],
+      "total": 360,
+      "date": "2024-12-02T18:47:35.815Z"
     }
   ]
 }
