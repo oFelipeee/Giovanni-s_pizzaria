@@ -35,6 +35,8 @@ const App = () => {
             options={{ headerShown: false }}
           />
 
+          
+
           {/* Tela de login */}
           <Stack.Screen
             name="Login"

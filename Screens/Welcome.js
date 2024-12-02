@@ -43,6 +43,8 @@ const Welcome = () => {
         Seja{"\n"}Bem - vindo(a)
       </Text>
 
+      
+
       <TouchableOpacity
         onPress={() => {
           nav.navigate("Tabs");
