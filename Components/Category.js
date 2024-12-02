@@ -39,11 +39,11 @@ const Menu = () => {
     { id: '1', name: 'Pizza Margherita', price: 45, image: 'https://www.donguilherme.com.br/assets/userfiles/archives/6405dff0d4d8d.jpg' },
     { id: '2', name: 'Pizza Pepperoni', price: 50, image: 'https://www.minhareceita.com.br/app/uploads/2022/12/pizza-de-pepperoni-caseira-portal-minha-receita.jpg' },
     { id: '3', name: 'Pizza Calabresa', price: 68, image: 'https://blog.biglar.com.br/wp-content/uploads/2023/06/iStock-1212512019.jpg' },
-    { id: '4', name: 'Pizza Doce', price: 40 , image: 'https://maisminas.org/wp-content/uploads/2022/12/pizza-scaled.jpg' },
+    { id: '4', name: 'Pizza Doce', price: 40, image: 'https://maisminas.org/wp-content/uploads/2022/12/pizza-scaled.jpg' },
   ];
 
   const hamburgers = [
-    { id: '5', name: 'Cheeseburger',  price: 40, image: 'https://i.ytimg.com/vi/SvOx7tA_Cv8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAUi4DTtB9e2mnIAe3JoxUoj6nbNA' },
+    { id: '5', name: 'Cheeseburger', price: 40, image: 'https://i.ytimg.com/vi/SvOx7tA_Cv8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAUi4DTtB9e2mnIAe3JoxUoj6nbNA' },
     { id: '6', name: 'Double Bacon', price: 43, image: 'https://groundbeefrecipes.com/wp-content/uploads/double-bacon-cheeseburger-recipe-6.jpg' },
     { id: '7', name: 'X-Burguer', price: 20, image: 'https://guiadacozinha.com.br/wp-content/uploads/2024/05/x-burguer-tradicional-768x619.jpg' },
     { id: '8', name: 'X-Salada', price: 30, image: 'https://assets.unileversolutions.com/recipes-v2/106684.jpg' },

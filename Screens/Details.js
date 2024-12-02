@@ -111,7 +111,7 @@ const Details = ({ route }) => {
 
         {myBag.includes(content) ? (
           <TouchableOpacity
-            onPress={() => {}}
+            onPress={() => { }}
             style={{
               backgroundColor: "red",
               height: 55,
@@ -127,24 +127,24 @@ const Details = ({ route }) => {
           </TouchableOpacity>
         ) : (
           <TouchableOpacity
-          onPress={() => {
-            const existingItem = myBag.find((bagItem) => bagItem.name === content.name);
-            if (!existingItem) {
-              setmyBag([...myBag, { ...content, quantity: 1, price: content.price }]);
-            }
-          }}
-          style={{
-            backgroundColor: colorful.primary,
-            height: 55,
-            borderRadius: 20,
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 20,
-          }}
-        >
-          <Text style={{ color: "white", fontSize: 16, fontWeight: "bold" }}>
-            Adicionar ao carrinho
-          </Text>
+            onPress={() => {
+              const existingItem = myBag.find((bagItem) => bagItem.name === content.name);
+              if (!existingItem) {
+                setmyBag([...myBag, { ...content, quantity: 1, price: content.price }]);
+              }
+            }}
+            style={{
+              backgroundColor: colorful.primary,
+              height: 55,
+              borderRadius: 20,
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: 20,
+            }}
+          >
+            <Text style={{ color: "white", fontSize: 16, fontWeight: "bold" }}>
+              Adicionar ao carrinho
+            </Text>
           </TouchableOpacity>
         )}
       </View>

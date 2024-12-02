@@ -35,8 +35,11 @@ const App = () => {
             options={{ headerShown: false }}
           />
 
+<<<<<<< HEAD
           
 
+=======
+>>>>>>> b8ab594984b96dacd181375724ca6cf96c1fcb4f
           {/* Tela de login */}
           <Stack.Screen
             name="Login"

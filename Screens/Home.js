@@ -5,7 +5,7 @@ import Search from "../Components/Search";
 import Category from "../Components/Category";
 import Banner from "../Components/Banner";
 import Fooditems from "../Components/Fooditems";
- 
+
 const Home = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={{}}>
@@ -20,5 +20,5 @@ const Home = ({ navigation }) => {
     </ScrollView>
   );
 };
- 
+
 export default Home;

@@ -37,7 +37,7 @@ const Fooditems = () => {
       price: 45,
       image: 'https://maisminas.org/wp-content/uploads/2022/12/pizza-scaled.jpg',
       addons: [
-        require('../assets/mms.png'),      ],
+        require('../assets/mms.png'),],
     },
     {
       id: '4',
@@ -55,7 +55,7 @@ const Fooditems = () => {
 
   return (
     <View style={{ gap: 15 }}>
-      <Text style={{ fontSize: 20 , fontWeight: "bold"}}>Mais pedidos:</Text>
+      <Text style={{ fontSize: 20, fontWeight: "bold" }}>Mais pedidos:</Text>
 
       <FlatList
         horizontal
@@ -88,7 +88,7 @@ const Fooditems = () => {
                 marginBottom: 10,
               }}
             />
-            <Text style={{color:"white", fontSize: 16, textAlign: "center", fontWeight:"bold" }}>{item.name}</Text>
+            <Text style={{ color: "white", fontSize: 16, textAlign: "center", fontWeight: "bold" }}>{item.name}</Text>
             <View
               style={{
                 flexDirection: "row",

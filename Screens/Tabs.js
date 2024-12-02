@@ -7,9 +7,9 @@ import Cart from "./Cart";
 import Profile from "./Perfil";
 import { Entypo, AntDesign, Feather, Ionicons } from "@expo/vector-icons";
 import { colorful } from "../Utils/Colors";
- 
+
 const Tab = createBottomTabNavigator();
- 
+
 const Tabs = () => {
   return (
     <Tab.Navigator
@@ -113,5 +113,5 @@ const Tabs = () => {
     </Tab.Navigator>
   );
 };
- 
+
 export default Tabs;

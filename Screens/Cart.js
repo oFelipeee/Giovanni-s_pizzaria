@@ -18,16 +18,16 @@ const Cart = () => {
   const { myBag, setmyBag } = React.useContext(item);
 
   // Calcula o total de acordo com as quantidades de cada item
-// Calcula o total de acordo com as quantidades e preços de cada item
-const totalAmount = myBag.reduce(
-  (acc, product) => acc + (product.price * (product.quantity || 1)),
-  0
-);
+  // Calcula o total de acordo com as quantidades e preços de cada item
+  const totalAmount = myBag.reduce(
+    (acc, product) => acc + (product.price * (product.quantity || 1)),
+    0
+  );
 
 
   // Atualiza a quantidade de um item no carrinho
   const updateQuantity = (product, newQuantity) => {
-    const updatedBag = myBag.map((item) => 
+    const updatedBag = myBag.map((item) =>
       item.name === product.name ? { ...item, quantity: newQuantity } : item
     );
     setmyBag(updatedBag);
