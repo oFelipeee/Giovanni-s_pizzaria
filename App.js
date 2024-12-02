@@ -21,47 +21,48 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator initialRouteName="Welcome">
           {/* Tela inicial de boas-vindas */}
+
           <Stack.Screen
             name="Welcome"
             component={Welcome}
             options={{ headerShown: false }}
           />
-          
+
           {/* Tela de perfil (ou cadastro) */}
           <Stack.Screen
             name="Profile"
             component={Profile}
             options={{ headerShown: false }}
           />
-          
+
           {/* Tela de login */}
           <Stack.Screen
             name="Login"
             component={Login}
             options={{ headerShown: false }}
           />
-          
+
           {/* Tela de tabs principais */}
           <Stack.Screen
             name="Tabs"
             component={Tabs}
             options={{ headerShown: false }}
           />
-          
+
           {/* Tela de detalhes do produto ou serviço */}
           <Stack.Screen
             name="Details"
             component={Details}
             options={{ headerShown: false }}
           />
-          
+
           {/* Tela de carrinho */}
           <Stack.Screen
             name="Cart"
             component={Cart}
             options={{ headerShown: false }}
           />
-          
+
           {/* Tela de confirmação de pedido */}
           <Stack.Screen
             name="Order"

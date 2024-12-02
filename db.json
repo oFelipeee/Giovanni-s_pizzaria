@@ -7,40 +7,22 @@
       "senha": "senha123"
     },
     {
-      "id": "2278",
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "password": "12345465"
+      "id": "a710",
+      "name": "igor",
+      "email": "teste2@gmail.com",
+      "password": "12345"
     },
     {
-      "id": "1e32",
-      "name": "userInfo.name",
-      "email": "oi@gmail.com",
-      "password": "felipe1234"
+      "id": "0631",
+      "name": "igor",
+      "email": "teste2@gmail.com",
+      "password": "12345"
     },
     {
-      "id": "daa0",
-      "name": "teste",
-      "email": "teste2@gmail",
-      "password": "2345"
-    },
-    {
-      "id": "4bdc",
-      "name": "teste",
-      "email": "teste2@gmail",
-      "password": "2345"
-    },
-    {
-      "id": "3273",
-      "name": "teste",
-      "email": "teste2@gmail",
-      "password": "2345"
-    },
-    {
-      "id": "3849",
-      "name": "teste",
-      "email": "teste@oia",
-      "password": "felipe"
+      "id": "5339",
+      "name": "igor",
+      "email": "teste2@gmail.com",
+      "password": "12345"
     }
   ]
 }
